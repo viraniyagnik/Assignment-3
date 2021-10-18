@@ -11,8 +11,10 @@ namespace A3
 			while (true)
 			{
 				Bird bird;
+				//To take user input based on their choice
 				Console.Write("Press C for chicken or O for Ostrich: ");
 				char key = Char.ToUpper(Console.ReadKey().KeyChar);
+				//To call metrhod based on user choice 
 				switch (key)
 				{
 					case 'C':
@@ -24,6 +26,8 @@ namespace A3
 					default:
 						return;
 				}
+
+				//Choice for how many eggs user want
 				Console.Write("\nHow many eggs should it lay? ");
 				if (!int.TryParse(Console.ReadLine(), out int numEggs)) { return; }
 				Egg[] eggs = bird.LayEggs(numEggs);
@@ -31,6 +35,7 @@ namespace A3
 			}
 		}
 
+		//To display the egg
 		static void DisplayEggs(Egg[] eggs)
 		{
 			foreach (var egg in eggs)
